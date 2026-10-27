@@ -2,6 +2,7 @@
 
 This project is an **interactive network map** of student thesis projects, clustered by research themes. It allows you to:
 - **Filter students** by name, field keywords, or method keywords.
+- **Search students or supervisors by name**; autocomplete suggestions are available as you type.
 - **Isolate clusters** by interacting with the network.
 - **Click on a student node** to view their details (name, research title, field/method keywords, and supervisors).
 

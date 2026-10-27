@@ -16,6 +16,11 @@
     <aside class="filters">
       <h3>Filters</h3>
       <div class="filter-group">
+        <label for="searchFilter">Student or supervisor</label>
+        <input id="searchFilter" type="search" list="nameSuggestions" placeholder="Search by name..." autocomplete="off">
+        <datalist id="nameSuggestions"></datalist>
+      </div>
+      <div class="filter-group">
         <label for="themeFilter">Theme</label>
         <select id="themeFilter">
           <option value="">All Themes</option>

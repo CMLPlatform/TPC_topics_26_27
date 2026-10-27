@@ -149,8 +149,8 @@ const data = [
     "research_title": "Improving life cycle inventory datasets for ships",
     "field_keywords": ["maritime transport", "data collection", "prospective life cycle assessment (LCA)"],
     "method_keywords": ["life cycle inventory (LCI)", "literature review", "developing datasets", "systems modeling"],
-    "first_supervisor": "Nils Thoneman",
-    "second_supervisor": "Aaron Paris",
+    "first_supervisor": "Nils Thonemann",
+    "second_supervisor": "",
     "group_name": "Circular Economy & Critical Resources",
     "secondary_group": ""
   },
@@ -491,7 +491,7 @@ const data = [
     "field_keywords": ["maritime shipping", "transition", "climate-neutral"],
     "method_keywords": ["discrete choice model", "life cycle assessment (LCA)", "agent-based modeling"],
     "first_supervisor": "Nils Thonemann",
-    "second_supervisor": "Aaron Paris",
+    "second_supervisor": "",
     "group_name": "Circular Economy & Critical Resources",
     "secondary_group": ""
   },
@@ -517,6 +517,23 @@ const methodKeywords = [...new Set(data.flatMap(student => student.method_keywor
 const themeFilter = document.getElementById('themeFilter');
 const fieldFilter = document.getElementById('fieldFilter');
 const methodFilter = document.getElementById('methodFilter');
+const searchFilter = document.getElementById('searchFilter');
+const nameSuggestions = document.getElementById('nameSuggestions');
+
+const searchableNames = new Map();
+data.forEach(student => {
+  searchableNames.set(student.name, 'Student');
+  [student.first_supervisor, student.second_supervisor].filter(Boolean).forEach(name => {
+    if (!searchableNames.has(name)) searchableNames.set(name, 'Supervisor');
+  });
+});
+
+[...searchableNames].sort(([nameA], [nameB]) => nameA.localeCompare(nameB)).forEach(([name, role]) => {
+  const option = document.createElement('option');
+  option.value = name;
+  option.label = role;
+  nameSuggestions.appendChild(option);
+});
 
 themes.forEach(theme => {
   const option = document.createElement('option');
@@ -711,9 +728,11 @@ network.on("click", function(params) {
 document.getElementById('themeFilter').addEventListener('change', filterNetwork);
 document.getElementById('fieldFilter').addEventListener('change', filterNetwork);
 document.getElementById('methodFilter').addEventListener('change', filterNetwork);
+searchFilter.addEventListener('input', filterNetwork);
 document.getElementById('resetFilters').addEventListener('click', resetFilters);
 
 function filterNetwork() {
+  const searchValue = searchFilter.value.trim().toLocaleLowerCase();
   const themeFilterValue = document.getElementById('themeFilter').value;
   const fieldFilterValue = document.getElementById('fieldFilter').value;
   const methodFilterValue = document.getElementById('methodFilter').value;
@@ -727,7 +746,11 @@ function filterNetwork() {
       student.group_name === themeFilterValue || student.secondary_group === themeFilterValue;
     const fieldMatch = fieldFilterValue === "" || student.field_keywords.includes(fieldFilterValue);
     const methodMatch = methodFilterValue === "" || student.method_keywords.includes(methodFilterValue);
-    if (themeMatch && fieldMatch && methodMatch) {
+    const nameMatch = searchValue === "" ||
+      student.name.toLocaleLowerCase().includes(searchValue) ||
+      student.first_supervisor.toLocaleLowerCase().includes(searchValue) ||
+      student.second_supervisor.toLocaleLowerCase().includes(searchValue);
+    if (themeMatch && fieldMatch && methodMatch && nameMatch) {
       visible.add(student.id);
       visibleGroups.add(student.group_name);
       if (student.secondary_group) visibleGroups.add(student.secondary_group);
@@ -754,6 +777,7 @@ function filterNetwork() {
 }
 
 function resetFilters() {
+  searchFilter.value = '';
   document.getElementById('themeFilter').value = '';
   document.getElementById('fieldFilter').value = '';
   document.getElementById('methodFilter').value = '';

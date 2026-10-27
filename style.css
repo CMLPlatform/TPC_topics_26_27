@@ -61,7 +61,8 @@ body {
   font-weight: 600;
 }
 
-.filter-group select {
+.filter-group select,
+.filter-group input {
   width: 100%;
   padding: 8px 10px;
   border: 1px solid var(--line);
@@ -71,7 +72,8 @@ body {
   color: var(--ink);
 }
 
-.filter-group select:focus {
+.filter-group select:focus,
+.filter-group input:focus {
   outline: 2px solid rgba(79, 70, 229, 0.35);
   border-color: var(--accent);
 }
