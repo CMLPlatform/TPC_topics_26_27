@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thesis Research Topics 2026-2027</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://visjs.github.io/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <h1>Thesis Research Topics <span>2026-2027</span></h1>
+    <p>Explore thesis projects by theme, field and method. Click a student for details.</p>
+  </header>
+  <main class="layout">
+    <aside class="filters">
+      <h3>Filters</h3>
+      <div class="filter-group">
+        <label for="themeFilter">Theme</label>
+        <select id="themeFilter">
+          <option value="">All Themes</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="fieldFilter">Field Keywords</label>
+        <select id="fieldFilter">
+          <option value="">All Field Keywords</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="methodFilter">Method Keywords</label>
+        <select id="methodFilter">
+          <option value="">All Method Keywords</option>
+        </select>
+      </div>
+      <button id="resetFilters">Reset Filters</button>
+      <div id="resultCount" class="result-count"></div>
+      <h3>Themes</h3>
+      <div id="legend" class="legend"></div>
+    </aside>
+    <section class="network-container">
+      <div id="network"></div>
+      <div id="studentSidebar" class="sidebar"></div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
