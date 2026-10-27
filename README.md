@@ -7,25 +7,6 @@ This project is an **interactive network map** of student thesis projects, clust
 
 ---
 
-## How to Publish on GitHub Pages
-
-1. **Create a GitHub Repository**:
-   - Go to [GitHub](https://github.com) and create a new repository (e.g., `thesis-network-map`).
-
-2. **Upload the Project Files**:
-   - Upload the contents of this `thesis-network-map` folder to the repository.
-
-3. **Enable GitHub Pages**:
-   - In your repository, go to **Settings** > **Pages**.
-   - Select the `main` branch and the `/root` folder.
-   - Click **Save**.
-
-4. **Access the Published Map**:
-   - After a few minutes, your map will be available at:
-     `https://<your-username>.github.io/thesis-network-map/`
-
----
-
 ## Project Structure
 ```
 thesis-network-map/
