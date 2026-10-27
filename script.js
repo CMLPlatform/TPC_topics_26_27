@@ -581,7 +581,7 @@ data.forEach(student => {
   nodes.push({
     id: student.id,
     label: student.name,
-    title: student.research_title,
+    research_title: student.research_title,
     group: student.group_name,
     theme: student.group_name,
     field_keywords: student.field_keywords,
@@ -647,7 +647,6 @@ const options = {
     smooth: { type: "continuous" },
     color: { opacity: 0.55 }
   },
-  interaction: { hover: true, tooltipDelay: 150 },
   physics: {
     forceAtlas2Based: {
       gravitationalConstant: -50,
@@ -669,6 +668,10 @@ const options = {
 
 const network = new vis.Network(container, networkData, options);
 
+function chips(list) {
+  return (list || []).map(k => `<span class="chip">${k}</span>`).join("");
+}
+
 // Show student details in sidebar on node click
 network.on("click", function(params) {
   if (params.nodes.length > 0) {
@@ -679,12 +682,23 @@ network.on("click", function(params) {
       sidebar.innerHTML = `
         <span class="close-sidebar" onclick="document.getElementById('studentSidebar').style.display='none'">×</span>
         <h2>${node.label}</h2>
-        <p><strong>Research Title:</strong> ${node.title}</p>
-        <p><strong>Theme:</strong> ${node.theme}</p>
-        <p><strong>Field Keywords:</strong> ${node.field_keywords.join(", ")}</p>
-        <p><strong>Method Keywords:</strong> ${node.method_keywords.join(", ")}</p>
-        <p><strong>First Supervisor:</strong> ${node.first_supervisor}</p>
-        <p><strong>Second Supervisor:</strong> ${node.second_supervisor}</p>
+        <p class="research-title">${node.research_title}</p>
+        <span class="theme-badge" style="--c:${groupColors[node.group] || '#6b7280'}">${node.theme}</span>
+        <section>
+          <h4>Field</h4>
+          <div class="chips">${chips(node.field_keywords)}</div>
+        </section>
+        <section>
+          <h4>Methods</h4>
+          <div class="chips method">${chips(node.method_keywords)}</div>
+        </section>
+        <section>
+          <h4>Supervisors</h4>
+          <ul class="supervisors">
+            ${node.first_supervisor ? `<li>${node.first_supervisor}<small>1st</small></li>` : ""}
+            ${node.second_supervisor ? `<li>${node.second_supervisor}<small>2nd</small></li>` : ""}
+          </ul>
+        </section>
       `;
       sidebar.style.display = "block";
     } else {
