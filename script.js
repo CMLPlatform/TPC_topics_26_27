@@ -8,7 +8,7 @@ const data = [
     "method_keywords": ["life cycle assessment (LCA)", "literature analysis", "meta-analysis", "interviews"],
     "first_supervisor": "Heath Logan",
     "second_supervisor": "",
-    "group_name": "Biodiversity & Ecosystem Services",
+    "group_name": "Circular Economy & Critical Resources",
     "secondary_group": ""
   },
   {
@@ -272,7 +272,7 @@ const data = [
     "method_keywords": ["life cycle assessment (LCA)", "material flow analysis (MFA)", "scenario and sensitivity analysis"],
     "first_supervisor": "Paola Ibarra Gonzalez",
     "second_supervisor": "",
-    "group_name": "Sustainable Food Systems & Agriculture",
+    "group_name": "Climate Change & Energy Transition",
     "secondary_group": ""
   },
   {
