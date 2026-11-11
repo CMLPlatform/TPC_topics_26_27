@@ -16,7 +16,7 @@
     ],
     "first_supervisor": "Heath Logan",
     "second_supervisor": "",
-    "group_name": "`circular economy & critical resources",
+    "group_name": "Circular Economy & Critical Resources",
     "secondary_group": ""
   },
   {
@@ -848,7 +848,7 @@
     ],
     "first_supervisor": "Nils Thonemann",
     "second_supervisor": "",
-    "group_name": "Circular Economy & Critical Resources",
+    "group_name": "Climate Change & Energy Transition",
     "secondary_group": ""
   },
   {
@@ -868,6 +868,82 @@
     "first_supervisor": "",
     "second_supervisor": "",
     "group_name": "Sustainable Food Systems & Agriculture",
+    "secondary_group": ""
+  },
+  {
+    "id": 47,
+    "name": "Vanessa",
+    "research_title": "The contribution of art-based learning methods to education for sustainability",
+    "field_keywords": [
+      "art-based learning",
+      "transformative learning",
+      "education science"
+    ],
+    "method_keywords": [
+      "interviews",
+      "qualitative analysis",
+      "coding"
+    ],
+    "first_supervisor": "Ingeborg Kluts",
+    "second_supervisor": "Andrea Gammon",
+    "group_name": "Policy, Governance & Socio-Technical Systems",
+    "secondary_group": ""
+  },
+  {
+    "id": 48,
+    "name": "Amy",
+    "research_title": "Using spatial analysis to analyse the fate of microplastics on land",
+    "field_keywords": [
+      "microplastics",
+      "environmental pollution",
+      "environmental flows"
+    ],
+    "method_keywords": [
+      "GIS",
+      "fate modeling",
+      "material flow analysis (MFA)"
+    ],
+    "first_supervisor": "José Mogollón",
+    "second_supervisor": "",
+    "group_name": "Biodiversity & Ecosystem Services",
+    "secondary_group": ""
+  },
+  {
+    "id": 49,
+    "name": "Noah",
+    "research_title": "Assessing the impact of agriculture on biodiversity across different spatial contexts",
+    "field_keywords": [
+      "biodiversity",
+      "agriculture",
+      "nature-positive solutions"
+    ],
+    "method_keywords": [
+      "GIS",
+      "biodiversity impact assessment (THRIVE)",
+      "remote sensing"
+    ],
+    "first_supervisor": "",
+    "second_supervisor": "",
+    "group_name": "Biodiversity & Ecosystem Services",
+    "secondary_group": "Sustainable Food Systems & Agriculture"
+  },
+  {
+    "id": 50,
+    "name": "Louisa",
+    "research_title": "Beyond the Biorefinery: Designing Industrial Symbiosis Networks for a Circular Carbon Economy",
+    "field_keywords": [
+      "bio-economy",
+      "circular economy",
+      "industrial symbiosis"
+    ],
+    "method_keywords": [
+      "energy and material analysis",
+      "environmental assessment",
+      "process modeling"
+    ],
+    "first_supervisor": "Paola Ibarra Gonzalez",
+    "second_supervisor": "",
+    "group_name": "Circular Economy & Critical Resources",
     "secondary_group": ""
   }
 ]
